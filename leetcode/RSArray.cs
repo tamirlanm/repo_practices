@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class RSArray
 {
     public int[] RunningSum(int[] nums)
     {

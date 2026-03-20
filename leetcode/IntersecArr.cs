@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class intersecArr
 {
     public int[] Intersection(int[] nums1, int[] nums2)
     {

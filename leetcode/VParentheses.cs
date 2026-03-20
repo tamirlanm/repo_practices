@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class VParentheses
 {
     public bool IsValid(string s)
     {

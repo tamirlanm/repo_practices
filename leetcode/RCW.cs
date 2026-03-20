@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class RCW
 {
     public int MaximumWealth(int[][] accounts)
     {
@@ -22,4 +22,4 @@
         return max;
     }
 }
-}
+

@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class MSA
 {
     public void Merge(int[] nums1, int m, int[] nums2, int n)
     {

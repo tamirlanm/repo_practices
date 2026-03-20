@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class Vanagram
 {
     public bool IsAnagram(string s, string t)
     {

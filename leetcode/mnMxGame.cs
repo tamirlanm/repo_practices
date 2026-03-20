@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class mnMxGame
 {
     public int MinMaxGame(int[] nums)
     {

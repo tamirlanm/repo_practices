@@ -1,4 +1,4 @@
-﻿public class Solution
+﻿public class BTBSS
 {
     public int MaxProfit(int[] prices)
     {
