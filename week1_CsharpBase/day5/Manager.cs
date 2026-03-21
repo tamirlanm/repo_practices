@@ -7,7 +7,10 @@ class Manager : Employee
         WarningDid = warningDid;        
     }
 
-
+    public override void Work()
+    {
+        Console.WriteLine($"{TypeEmployee} {Name} is managing and plans.");
+    }
     public void Print()
     {
         Console.WriteLine($"Employee: {Name}\nCompany: {Company}\nYear from {Name} works: {YearFrom}\nWhat post: {TypeEmployee}\n{WarningDid} times {Name} {TypeEmployee} did warn other employees");

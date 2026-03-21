@@ -11,5 +11,9 @@ class Developer : Employee
         TypeEmployee = typeEmp;
         Post = post;
     }
+    public override void Work()
+    {
+        Console.WriteLine($"{TypeEmployee} {Name} is writing codes and testing");
+    }
     public void Print() => Console.WriteLine($"Employee's name: {Name}\nWhat Company's at his working: {Company}\nType of Employee: {TypeEmployee}\nHe is working at {Company} from: {YearFrom}\nWhat Level developer he is: {Post}");
 }

@@ -14,5 +14,10 @@ class Employee
         YearFrom = yearFrom;
 
     }
+
+    public virtual void Work()
+    {
+        Console.WriteLine($"Employee is working.");
+    }
     public void Print() => Console.WriteLine($"Person Name: {Name}\nCompany name where he is working: {Company}\nYear from {Name} works: {YearFrom}");
 }
