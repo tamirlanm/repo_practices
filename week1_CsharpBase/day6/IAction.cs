@@ -1,0 +1,5 @@
+
+interface IAction
+{
+    void Move();
+}
