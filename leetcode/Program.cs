@@ -4,9 +4,9 @@ class Program
 {
 
     public static void Main(string[] args){
-        int x = int.Parse(Console.ReadLine());
-        palindromeNumber pn = new palindromeNumber();
-        bool s = pn.IsPalindrome(x);
-        Console.WriteLine(s);    
+        string s = Console.ReadLine();
+        LastWord ls = new LastWord();
+        int t = ls.LengthOfLastWord(s);
+        Console.WriteLine(t); 
     }
 }
