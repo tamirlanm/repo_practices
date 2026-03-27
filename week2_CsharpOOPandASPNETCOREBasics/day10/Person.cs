@@ -1,12 +1,1 @@
-class Person
-{
-    List<Person> people = new List<Person>();
-
-    public string Name {get;}
-    public int Age {get;}
-    public Person(string name, int age)
-    {
-        Name = name;
-        Age = age;
-    }
-}
+record class Person(string Name, int Age);
