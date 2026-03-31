@@ -1,5 +1,4 @@
-﻿
-
+﻿/*
 string[] people = {"Tom", "Bob", "Sam", "Tomas"};
 
 var selectedPeople = from p in people where p.ToUpper().StartsWith('T') orderby p select p;
@@ -92,3 +91,53 @@ foreach(var emp in employees2)
 {
     Console.WriteLine($"Employee: {emp.Name} - Company: {emp.Company}");
 }
+*/
+
+string[] people = { "Tom", "Alice", "Bob", "Sam", "Tomas", "Tim", "Bill"};
+
+var selectedPeople = people.Where(p => p.Length == 3);
+
+foreach(var sp in selectedPeople)
+{
+    Console.WriteLine(sp);
+}
+
+int[] nums = {10,1,5,11,13,18,26,55,31,90};
+var evens = nums.Where(i => i % 2 ==0 && i > 10);
+foreach(var i in evens)
+{
+    Console.Write($"{i}, ");
+}
+
+Console.WriteLine();
+
+var newPeople = new List<Person>
+{
+    new Person("Akyn",22, new List<string> {"english","german"}),
+    new Person("Aiza", 23, new List<string> {"albanian", "kazakh"}),
+    new Person("Ayau", 19, new List<string> {"kazakh", "english"})
+};
+
+var selectedNewPeople = from person in newPeople from lang in person.Languages where person.Age > 22 where lang == "kazakh" select new
+{
+    person.Name,
+    person.Age,
+    Language = lang
+};
+
+foreach(var pp in selectedNewPeople)
+{
+    Console.WriteLine($"Name: {pp.Name}, Age: {pp.Age}, Languages: {pp.Language}");
+}
+
+Console.WriteLine();
+
+int[] numbers = { 3, 12, 4, 10 };
+var orderedNumbers = numbers.OrderBy(n=>n);
+foreach (int i in orderedNumbers)
+    Console.WriteLine(i);
+ 
+string[] people5 = { "Tom", "Bob", "Sam" };
+var orderedPeople = people5.OrderByDescending(p=>p);
+foreach (var p in orderedPeople)
+    Console.WriteLine(p);
