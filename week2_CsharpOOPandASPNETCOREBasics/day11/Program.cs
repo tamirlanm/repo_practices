@@ -58,3 +58,38 @@ Console.WriteLine($"task2 result: {task2.Result}");
 //{
 //    Console.WriteLine(result);
 //}
+
+
+// Example error handling in Asynchronous programming
+
+var newTask1 = NewPrintAsync("H");
+var newTask2 = NewPrintAsync("H2");
+var newTask3 = NewPrintAsync("Using Key Word!!");
+var allnewTasks = Task.WhenAll(newTask1, newTask2, newTask3);
+
+try
+{
+    await allnewTasks;
+}
+catch(Exception ex)
+{
+    Console.WriteLine($"Exception: {ex.Message}");
+    Console.WriteLine($"IsFaulted: {allnewTasks.IsFaulted}");
+    if(allnewTasks.Exception is not null)
+    {
+        foreach(var exception in allnewTasks.Exception.InnerExceptions)
+        {
+            Console.WriteLine($"InnerException: {exception.Message}");
+        }
+    }
+}
+
+async Task NewPrintAsync(string message)
+{
+    if(message.Length < 3)
+    {
+        throw new ArgumentException($"Invalid string: {message}");
+    }
+    await Task.Delay(1200);
+    Console.WriteLine(message);
+}
