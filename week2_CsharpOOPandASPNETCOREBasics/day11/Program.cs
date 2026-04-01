@@ -43,3 +43,18 @@ async Task<int> SquareAsync(int n){
     await Task.Delay(1000);
     return n*n;
 }
+
+// Another example of using Task.WhenAll. Getting results
+
+var task1 = SquareAsync(6);
+var task2 = SquareAsync(8);
+var task3 = SquareAsync(10);
+
+await Task.WhenAll(task1,task2,task3);
+Console.WriteLine($"task2 result: {task2.Result}");
+//int[] results = await Task.WhenAll(task1,task2,task3);
+
+//foreach(int result in results)
+//{
+//    Console.WriteLine(result);
+//}
