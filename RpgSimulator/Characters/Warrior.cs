@@ -49,7 +49,7 @@ public class Warrior : Character
     }
     public override void ShowStats()
     {
-        base.ShowStats();(
+        base.ShowStats();
         if (_rageActive)
         {
             Console.WriteLine($"    🔥 Rage is active ({_rageTurnsLeft}) turn)");
