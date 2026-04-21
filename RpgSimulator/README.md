@@ -1,7 +1,7 @@
 # ⚔️ RPG Battle Simulator (Console Pet Project)
 A console-based turn-based combat simulator developed in C# and .NET 10.0. The project was created to demonstrate object-oriented programming (OOP) skills, application of SOLID principles, and design patterns.
 
-## Key Features
+## ✅ Key Features
 * Class system: Choose a hero from several archetypes (Warrior, Mage, Archer, Paladin), each with their own uniquie characteristics and logic.    
 * Ability System: Use active skills (Fireball, Multi-shot, Rage, etc.) that consume resources (mana, rage, holy power).
 * Artificial Intelligence: Enemies (Goblins, Orcs, Dragons) make decisions in combat, using basic attacks or healing abilities depending on the situation.
