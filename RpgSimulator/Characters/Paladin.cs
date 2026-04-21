@@ -12,7 +12,7 @@ public class Paladin : Character
         if(_holyPower < MaxHolyPower)
         {
             _holyPower++;
-            Console.WriteLine($"    ✨ {Name} accumulates holy power ({_holyPower}/{MaxHolyPower})");
+            Console.WriteLine($"    ✨ {Name} accumulates sacred power ({_holyPower}/{MaxHolyPower})");
         }
         return BaseDamage;
     }
@@ -25,21 +25,25 @@ public class Paladin : Character
         Abilities.Add(new HolySmiteAbiltiy(this));
     }
 
+    public void HealFromSmite(int amount)
+    {
+        Heal(amount);
+    }
     public void SpendHolyPowerForHeal()
     {
         if(_holyPower < 3)
         {
-            Console.WriteLine($"    {Name}: not enough holy power! ({_holyPower}/{MaxHolyPower})");
+            Console.WriteLine($"    {Name}: not enough sacred power! ({_holyPower}/{MaxHolyPower})");
             return;
         }
         int healAmount = _holyPower * 15;
         _holyPower = 0;
         Heal(healAmount);
-        Console.WriteLine($"    💚 {Name} uses holy power and restores {healAmount} HP!");
+        Console.WriteLine($"    💚 {Name} uses sacred power and restores {healAmount} HP!");
     }
     public override void ShowStats()
     {
         base.ShowStats();
-        Console.WriteLine($"    ✨ Holy power: {_holyPower}/{MaxHolyPower}");
+        Console.WriteLine($"    ✨ Sacred power: {_holyPower}/{MaxHolyPower}");
     }
 }
