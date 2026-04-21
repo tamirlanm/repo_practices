@@ -1,4 +1,4 @@
-namespace RpgSimulator.Core;
+namespace RpgSimulator.Characters;
 
 public class Warrior : Character
 {
@@ -17,8 +17,8 @@ public class Warrior : Character
         bool isCrit = _random.Next(100) < 20;
         if (isCrit)
         {
-            damage = (int)(damage * 1.5);
-            Console.WriteLine("    💣 CRITICAL HIT!   ");
+            damage = (int)(damage * 1.25);
+            Console.WriteLine("    💥 CRITICAL HIT!   ");
         }
         if (_rageActive)
         {

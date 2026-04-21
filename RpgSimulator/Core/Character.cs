@@ -32,7 +32,7 @@ public abstract class Character : ICharacter
         BaseDamage = baseDamage;
         Defense = defense;
 
-        RegiterAbilities();
+        RegisterAbilities();
     }
 
     public void Attack(ICharacter target)
