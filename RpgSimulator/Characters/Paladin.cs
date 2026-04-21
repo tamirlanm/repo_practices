@@ -6,7 +6,7 @@ public class Paladin : Character
     private int _holyPower = 0;
     private const int MaxHolyPower = 5;
     
-    public Paladin(string name) : base(name, maxHealth: 110, baseDamage: 22, defense: 12){}
+    public Paladin(string name) : base(name, maxHealth: 110, baseDamage: 22, defense: 8){}
     protected override void CalculateDamage()
     {
         if(_holyPower < MaxHolyPower)

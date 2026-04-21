@@ -6,7 +6,7 @@ public class Warrior : Character
     private int _rageTurnsLeft = 0;
     private readonly Random _random = new();
 
-    public Warrior(string name) : base(name,health: 125, baseDamage: 24, defense: 6)
+    public Warrior(string name) : base(name,health: 125, baseDamage: 24, defense: 10)
     {
        // Abilities.Add(new RageAbility(this)); 
     }
