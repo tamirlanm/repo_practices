@@ -1,4 +1,4 @@
-
+namespace RpgSimulator.Abilities;
 public class RageAbility : IAbility
 {
     private readonly Warrior _warrior;
