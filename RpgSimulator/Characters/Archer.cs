@@ -1,4 +1,5 @@
-
+using RpgSimulator.Core;
+using RpgSimulator.Abilities;
 namespace RpgSimulator.Characters;
 
 public class Archer : Character

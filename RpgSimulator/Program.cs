@@ -60,7 +60,7 @@ while (playAgain)
     playAgain = Console.ReadLine()?.Trim().ToLower() == "y";
 }
 
-Console.WriteLine("\n   ⚔️ Thank you for game! See you soon.");
+Console.WriteLine("\n   ⚔️  Thank you for game! See you soon.");
 
 static void PrintWelcome()
 {

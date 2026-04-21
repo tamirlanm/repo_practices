@@ -1,3 +1,5 @@
+using RpgSimulator.Core;
+using RpgSimulator.Abilities;
 namespace RpgSimulator.Characters;
 
 public class Warrior : Character
@@ -6,7 +8,7 @@ public class Warrior : Character
     private int _rageTurnsLeft = 0;
     private readonly Random _random = new();
 
-    public Warrior(string name) : base(name,health: 125, baseDamage: 24, defense: 10)
+    public Warrior(string name) : base(name, maxHealth: 125, baseDamage: 24, defense: 10)
     {
        // Abilities.Add(new RageAbility(this)); 
     }

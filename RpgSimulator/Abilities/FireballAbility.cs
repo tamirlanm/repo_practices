@@ -1,4 +1,5 @@
-
+using RpgSimulator.Core;
+using RpgSimulator.Characters;
 namespace RpgSimulator.Abilities;
 
 public class FireballAbility : IAbility

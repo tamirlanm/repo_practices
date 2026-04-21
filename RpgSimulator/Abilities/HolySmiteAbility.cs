@@ -1,16 +1,17 @@
-
+using RpgSimulator.Core;
+using RpgSimulator.Characters;
 namespace RpgSimulator.Abilities;
 
-public class HolySmiteAbiltiy : IAbility
+public class HolySmiteAbility : IAbility
 {
     private readonly Paladin _paladin;
     private readonly Random _random = new();
 
     public string Name => "Holy hit";
-    public int MaxMana => 0;
+    public int ManaCost => 0;
     public string Description => "Deals 40-55 sacred damage and restores 20% of that damage to the Paladin";
 
-    public HolySmiteAbiltiy(Paladin paladin) => _paladin = paladin;
+    public HolySmiteAbility(Paladin paladin) => _paladin = paladin;
 
     public void Use(ICharacter caster, ICharacter target)
     {
@@ -22,7 +23,7 @@ public class HolySmiteAbiltiy : IAbility
 
         Console.WriteLine($"    ✨ {caster.Name} summons the sacred light and unleashes it upon {target.Name}");
         Console.WriteLine($"    💥 {target.Name} receives {damage} holy power!");
-        target.TakeDamge(target);
+        target.TakeDamage(damage);
 
         if(target.IsAlive || damage > 0)
         {

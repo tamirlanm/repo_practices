@@ -1,3 +1,4 @@
+using RpgSimulator.Abilities;
 namespace RpgSimulator.Core;
 
 public abstract class Character : ICharacter
@@ -9,13 +10,13 @@ public abstract class Character : ICharacter
 
     protected int BaseDamage {get; set;}
     protected int Defense {get; set;}
-    protected List<Ability> Abilities {get;}= new();
+    protected List<IAbility> Abilities {get;}= new();
 
     public event Action<ICharacter>? OnDeath;
     public event Action<ICharacter, int>? OnDamaged;
     public event Action<ICharacter, int>? OnHealed;
 
-    protecter Character(string name, int maxHealth, int baseDamage,int defense = 0)
+    protected Character(string name, int maxHealth, int baseDamage,int defense = 0)
     {
         if (string.IsNullOrWhiteSpace(name))
         {
@@ -94,17 +95,18 @@ public abstract class Character : ICharacter
 
     protected abstract int CalculateDamage();
     protected abstract string GetAttackMessage(ICharacter target);
-    protected abstract void RegiterAbilities();
+    protected abstract void RegisterAbilities();
 
     private string BuildHpBar()
     {
         int barLength = 10;
         int filled = (int)Math.Round((double)Health / MaxHealth * barLength);
-        string bar = new string("\u001b[32m\u2588\u001b[0m", filled) + new string("\u2591", barLength - filled);
+
+        string bar = new string('█', filled) + new string('░', barLength - filled);
 
         return Health > MaxHealth * 0.5 ? $"[\u001b[32m{bar}\u001b[0m]" 
-                : Health > MaxHealth * 0.2 ? $"[u001b[33m{bar}\u001b[0m]" 
-                : $"[\u001b[31m{bar}\u001b[0m]";
+             : Health > MaxHealth * 0.2 ? $"[\u001b[33m{bar}\u001b[0m]" 
+             : $"[\u001b[31m{bar}\u001b[0m]";
     }
 
 }

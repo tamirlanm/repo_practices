@@ -1,4 +1,5 @@
-
+using RpgSimulator.Characters;
+using RpgSimulator.Core;
 namespace RpgSimulator.Factories;
 
 public static class CharacterFactory
@@ -9,10 +10,10 @@ public static class CharacterFactory
     {
         return type.ToLower().Trim() switch
         {
-            "warrior" => new Warrior(name),
-            "mage" => new Mage(name),
-            "archer" => new Archer(name),
-            "paladin" => new Paladin(name),
+            "1" or "warrior" => new Warrior(name),
+            "2" or "mage" => new Mage(name),
+            "3" or "archer" => new Archer(name),
+            "4" or "paladin" => new Paladin(name),
             _ => throw new ArgumentException($"Unknown type character: '{type}'. " + $"Available: {string.Join(", ", AvailableTypes)}")
         };
     }

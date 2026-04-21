@@ -1,3 +1,7 @@
+using RpgSimulator.Core;
+using RpgSimulator.Characters;
+namespace RpgSimulator.Abilities;
+
 public class DivineHealAbility : IAbility
 {
     private readonly Paladin _paladin;

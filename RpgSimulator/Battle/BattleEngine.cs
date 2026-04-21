@@ -1,5 +1,5 @@
-using System.Security.Cryptography.X509Certificates;
-
+using RpgSimulator.Core;
+using RpgSimulator.Characters;
 namespace RpgSimulator.Battle;
 
 public class BattleEngine
@@ -47,7 +47,12 @@ public class BattleEngine
                 ExecuteTurn(enemy, hero, isPlayerTurn: false);
             }
             Thread.Sleep(600);
+
         }
+        var winner = hero.IsAlive ? hero : enemy;
+        var loser = hero.IsAlive ? enemy : hero;
+        _logger.LogBattleEnd(winner, loser, round);
+        return winner; 
     }
     
     private void ExecuteTurn(Character attacker, Character defender, bool isPlayerTurn)

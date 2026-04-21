@@ -1,3 +1,7 @@
+using RpgSimulator.Core;
+using RpgSimulator.Abilities;
+using RpgSimulator.Characters;
+
 namespace RpgSimulator.Factories;
 
 public class Goblin : Character
@@ -29,16 +33,16 @@ public class Dragon : Character
     private int _breathCooldown = 0;
     public Dragon() : base("Dragon", maxHealth: 200, baseDamage: 30, defense: 12){}
 
-    protected override void CalculateDamage()
+    protected override int CalculateDamage()
     {
         _breathCooldown++;
         if(_breathCooldown >= 3)
         {
             _breathCooldown = 0;
             Console.WriteLine("    🔥 Dragon uses FIRE-BREATHING!");
-            return baseDamage * 2;
+            return BaseDamage * 2;
         }
-        return baseDamage;
+        return BaseDamage;
     }
 
     protected override string GetAttackMessage(ICharacter target) => $"🐉 Dragon attacks {target.Name}!";

@@ -1,3 +1,5 @@
+using RpgSimulator.Core;
+using RpgSimulator.Characters;
 namespace RpgSimulator.Battle;
 
 public class BattleLogger

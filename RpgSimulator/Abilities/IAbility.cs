@@ -1,4 +1,6 @@
-namespace RpgSimulator.Core;
+using RpgSimulator.Core;
+using RpgSimulator.Characters;
+namespace RpgSimulator.Abilities;
 
 public interface IAbility
 {

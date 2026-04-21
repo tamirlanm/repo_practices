@@ -1,3 +1,5 @@
+using RpgSimulator.Core;
+using RpgSimulator.Abilities;
 namespace RpgSimulator.Characters;
 public class Mage : Character
 {
@@ -17,6 +19,7 @@ public class Mage : Character
         int bonus = _random.Next(0,18);
         return BaseDamage + bonus;
     }
+    protected override string GetAttackMessage(ICharacter target) => $"🔮 {Name} launches magic into {target.Name}";
     protected override void RegisterAbilities()
     {
         Abilities.Add(new FireballAbility(this));

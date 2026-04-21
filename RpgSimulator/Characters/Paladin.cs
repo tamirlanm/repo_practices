@@ -1,4 +1,5 @@
-
+using RpgSimulator.Core;
+using RpgSimulator.Abilities;
 namespace RpgSimulator.Characters;
 
 public class Paladin : Character
@@ -7,7 +8,7 @@ public class Paladin : Character
     private const int MaxHolyPower = 5;
     
     public Paladin(string name) : base(name, maxHealth: 110, baseDamage: 22, defense: 8){}
-    protected override void CalculateDamage()
+    protected override int CalculateDamage()
     {
         if(_holyPower < MaxHolyPower)
         {
@@ -17,12 +18,12 @@ public class Paladin : Character
         return BaseDamage;
     }
 
-    protected override void GetAttackMessage(ICharacter target) => $"🔨 {Name} hist with a hammer at {target.Name}!";
+    protected override string GetAttackMessage(ICharacter target) => $"🔨 {Name} hist with a hammer at {target.Name}!";
 
     protected override void RegisterAbilities()
     {
         Abilities.Add(new DivineHealAbility(this));
-        Abilities.Add(new HolySmiteAbiltiy(this));
+        Abilities.Add(new HolySmiteAbility(this));
     }
 
     public void HealFromSmite(int amount)
