@@ -49,7 +49,7 @@ public class BattleEngine
             Thread.Sleep(600);
 
         }
-        var winner = hero.IsAlive ? hero : enemy;
+        winner = hero.IsAlive ? hero : enemy;
         var loser = hero.IsAlive ? enemy : hero;
         _logger.LogBattleEnd(winner, loser, round);
         return winner; 
