@@ -1,8 +1,19 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-class Program
+﻿class Program
 {
+    public static void Main(string[] args)
+    {
+        SearchInsertPosition ss = new SearchInsertPosition();
+        int n = int.Parse(Console.ReadLine());
+        int target = int.Parse(Console.ReadLine());
+        string[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-    public static void Main(string[] args){
+        int[] nums = new int[n];
+        for(int i = 0;i < n; i++)
+        {
+            nums[i] = int.Parse(input[i]);
+        }
+        
+        int t = ss.SearchInsert(nums, target);
+        Console.WriteLine($"Result: {t}");
     }
 }
