@@ -3,32 +3,24 @@ public class SearchInsertPosition
 {
     public int SearchInsert(int[] nums, int target)
     {
-        int mid = nums.Length/2;
-        int j = 0;
-        for(int i = 0; i < mid; i++)
+        int low = 0, high = nums.Length - 1;
+        while(low <= high)
         {
-            if(target <= nums[i])
+            int mid = low + (high - low) / 2;
+
+            if(nums[mid] == target)
             {
-                return j;
+                return mid;
             }
-            else if(nums[i] == target)
+            if(nums[mid] < target)
             {
-                return i;
-            }    
-            j++;
+                low = mid + 1;
+            }
+            else if(nums[mid] > target)
+            {
+                high = mid -1;
+            }
         }
-        for(int i = mid; i < nums.Length; i++)
-        {
-            if(target <= nums[i])
-            {
-                return j;
-            }
-            else if(nums[i] == target)
-            {
-                return i;
-            }
-            j++;
-        }
-        return j++;
+        return low;
     }
 }
