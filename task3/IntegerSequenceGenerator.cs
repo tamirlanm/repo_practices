@@ -1,4 +1,3 @@
-namespace task3;
 public class IntegerSequenceGenerator : SequenceGenerator<int>
 {
     public IntegerSequenceGenerator(int previous, int current) : base(previous, current){}

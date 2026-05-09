@@ -1,6 +1,5 @@
-namespace task3;
 
-interface ISequenceGenerator<T>
+public interface ISequenceGenerator<T>
 {
     public T Previous {get;}
     public T Current{get;}

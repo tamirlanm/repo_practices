@@ -1,3 +1,4 @@
+
 public class FibonacciSequenceGenerator : SequenceGenerator<int>
 {
     public FibonacciSequenceGenerator(int previous, int current) : base(previous, current)
